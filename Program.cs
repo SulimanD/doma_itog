@@ -12,6 +12,7 @@
 
 // Решение:
 // уточняю размер искомого массива 
+
 int SearchValidSizeArray(string[] fullArray, int lengthElement)
 {
     string[] validArray = new string[fullArray.Length];
@@ -86,3 +87,12 @@ string[] UserEntersArray()
 // string[] userArray = { "Russia", "Denmark", "Kazan" };
 // string[] userArray = { "hello", "2", "world", ":-)" };
 // string[] userArray = { "1234", "1567", "-2", "computer scince" };
+
+
+int lengthString = 3; // количество символов в строках искомого массива 
+string[] userArray = UserEntersArray();
+Console.WriteLine($"Ниже [введенные Вами строки] и [строки, длина которых меньше либо равна {lengthString} символам]:");
+PrintArray(userArray);
+Console.Write("->");
+int validSizeArray = SearchValidSizeArray(userArray, lengthString);
+PrintArray(GetLimitLengthElementArray(userArray, lengthString, validSizeArray));
